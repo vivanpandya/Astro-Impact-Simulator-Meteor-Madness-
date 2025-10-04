@@ -1,0 +1,209 @@
+:root {
+  --bg-dark: #071021;
+  --panel-dark: #0b1c45;
+  --accent: #4a8bff;
+  --light: #cdd9ff;
+  --earthquake: #ff9800;
+  --impact: #ff3838;
+  --tsunami: #005bff;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg-dark);
+  color: white;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background: var(--panel-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  color: var(--accent);
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header p {
+  color: var(--light);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: calc(100vh - 120px);
+}
+
+.sidebar {
+  background: var(--panel-dark);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow-y: auto;
+  border-right: 2px solid #14285f;
+  scrollbar-width: thin;
+  scrollbar-color: #4a8bff #0b1c45;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+.sidebar h2,
+.sidebar h3 {
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar label {
+  font-size: 0.85rem;
+  color: var(--light);
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem;
+  background: #13234b;
+  color: white;
+}
+
+.sidebar input:focus {
+  outline: 2px solid var(--accent);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn {
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 0.6rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+.btn-warning {
+  background: var(--earthquake);
+  color: white;
+  box-shadow: 0 0 6px rgba(255, 152, 0, 0.4);
+}
+
+.btn-info {
+  background: #00aaff;
+  color: white;
+  box-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+  box-shadow: 0 0 10px rgba(74, 139, 255, 0.5);
+}
+
+.tip {
+  font-size: 0.75rem;
+  color: var(--light);
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.mapContainer {
+  padding: 0.5rem;
+}
+
+#map {
+  height: 65vh;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+#results {
+  margin-top: 1rem;
+  background: #0d1838;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  text-align: center;
+  padding: 0.4rem;
+  color: #9ea9df;
+  font-size: 0.8rem;
+  border-top: 1px solid #14285f;
+}
+
+/* 🌍 Legend Styling */
+.legend {
+  background: rgba(0, 10, 30, 0.9);
+  color: #fff;
+  padding: 10px 14px;
+  line-height: 1.4;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.legend h4 {
+  margin: 0 0 6px 0;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.legend p {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+/* 🧭 Legend Color Boxes */
+.legend p:nth-child(2) span {
+  background: var(--impact);
+}
+.legend p:nth-child(3) span {
+  background: var(--earthquake);
+}
+.legend p:nth-child(4) span {
+  background: var(--tsunami);
+}
